@@ -1,0 +1,176 @@
+/* GENERAL SETTINGS */
+
+html {
+    font-size: calc(9px + 1.5vw);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #2b2c34;
+}
+
+h2 {
+    color: #2b2c34;
+    font-size: 1.2rem;
+}
+
+p {
+    color: #2b2c34;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+/* MORE SPECIFIC SETTINGS */
+
+ul, li{
+    list-style-type: none;
+    display: inline-block;
+    align-items:flex-start;
+    padding: 0 2px;
+}
+
+/* SPECIFYING THE HIGH-LEVEL PARTS */
+
+.section {
+    margin: 0rem auto;
+    display: flex;
+    justify-content: center;
+    max-width: 1444px;
+    content: 90%;
+    margin: 0 5%;
+}
+
+.section-coloured {
+    background: #d1d1e9;
+}
+
+#nav-section {
+    position: sticky;
+    top: 0;
+    background: white;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.cover {
+    margin-top: 5vh;
+    padding: 8%;
+    width: 100%;
+    display: flex;
+    flex-flow: nowrap ;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+#display-title {
+    justify-content: flex-start;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+
+@media only screen and (max-width: 420px) {
+    html {
+        font-size: calc(9px + 0.6vw)
+    }
+}
+
+@media only screen and (min-width: 630px) {
+    html {
+        font-size: calc(9px + 2.5vw)
+    }
+
+    ul li {
+        padding: 0 max(10px,1vw);
+    }
+}
+
+@media only screen and (min-width: 1444px) {
+    html {
+        font-size: calc(0.027 * 1444px)
+    }
+
+}
+
+/* NAVBAR */
+
+.left-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.right-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: max(10vw,20px);
+    justify-content: flex-end;
+}
+
+/* COVER */
+
+.cover-piece {
+    width: 80%;
+    padding: 0 0.2vw;
+}
+
+.cover-img {
+    align-self: center;
+}
+
+.cover-piece > img {
+    width: 70%;
+    max-width: calc(0.35 * 1444px);
+}
+
+/* TILES */
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 75%), 0.6fr));
+    justify-content: center;
+    grid-auto-rows: 1fr;
+    gap: 1em;
+    width: 100%;
+    
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+    background: #6246ea;
+    height: 100%;
+    transition-duration: 1s;
+}
+
+.card:hover {
+    box-shadow:rgba(0,0,0,0.2) 0px 20px 25px, inset rgba(0,0,0,0.50) 0px -150px 200px;
+}
+
+.card > img {
+    align-self: center;
+    justify-self: center;
+    grid-row: 2/3;
+    width: 50%;
+    padding: 1rem;
+}
+
+.card > h2 {
+    align-self: flex-end;
+    justify-self: center;
+    grid-row: 1/2;
+}
